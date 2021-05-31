@@ -1,13 +1,13 @@
 const fs = require('fs');
 const Manager = require("./lib/Manager")
-// const Engineer = require("./lib/Engineer")
-// const Intern = require("./lib/Intern")
-// const path = require('path');
-// const htmlHelpers = require('./src/utils/html');
-// const inquirer = require('inquirer');
-// const teamArray = [];
-// const employee = [];
-// let cards;
+const Engineer = require("./lib/Engineer")
+const Intern = require("./lib/Intern")
+const path = require('path');
+const htmlHelpers = require('./src/utils/html');
+const inquirer = require('inquirer');
+const teamArray = [];
+const employee = [];
+let cards;
 
 // initial manager input
 createManager()
@@ -126,3 +126,43 @@ function addIntern() {
         createEmployee()
     })
 }
+
+function buildEmployee(employee) {  
+    let source;
+    if (employee instanceof Manager)  {
+        source = `
+        <div class="card">
+        <div class="card-header">ID: ${ employee.getId() }</div>
+        <div class="card-body">
+          <h5 class="card-title">Name: ${ employee.getName() }</h5>
+          <p class="card-text">Role: ${ employee.getRole() }</p>
+          <a href="#" class="btn btn-primary">Phone: ${ employee.getOfficeNumber() }</a>
+        </div>
+      </div>`;
+    } else if (employee instanceof Engineer) {
+        source = `
+        <div class="card">
+        <div class="card-header">ID: ${ employee.getId() }</div>
+        <div class="card-body">
+          <h5 class="card-title">Name: ${ employee.getName() }</h5>
+          <p class="card-text">Role: ${ employee.getRole() }</p>
+          <a href="#" class="btn btn-primary">Github: ${ employee.getGithub() }</a>
+        </div>
+      </div>`
+    
+    } else if (employee instanceof Intern) {
+        source =`
+        <div class="card">
+        <div class="card-header">ID: ${ employee.getId() }</div>
+        <div class="card-body">
+          <h5 class="card-title">Name: ${ employee.getName() }</h5>
+          <p class="card-text">Role: ${ employee.getRole() }</p>
+          <a href="#" class="btn btn-primary">School: ${ employee.getSchool() }</a>
+        </div>
+      </div>`
+    }
+    
+        return source;
+    }
+    
+    
