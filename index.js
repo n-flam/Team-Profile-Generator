@@ -65,3 +65,64 @@ function createEmployee() {
         }
     });
 }
+
+function addEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "Please enter your engineer's name?",
+        },
+        {
+            type: 'input',
+            message: 'What is his/her ID number?',
+            name: 'id'
+        },
+        {
+            type: 'input',
+            message: 'What is his/her email address?',
+            name: 'email',
+        },
+        {
+            type: 'input',
+            message: 'What is his/her Github address?',
+            name: 'github',
+        }
+    ]).then(answers => {
+        console.log(answers)
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
+        teamArray.push(engineer);
+        createEmployee()
+    })
+}
+
+
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "Please enter your Intern's name?",
+        },
+        {
+            type: 'input',
+            message: 'What is his/her ID number?',
+            name: 'id'
+        },
+        {
+            type: 'input',
+            message: 'What is his/her email address?',
+            name: 'email',
+        },
+        {
+            type: 'input',
+            message: 'What is his/her School?',
+            name: 'school',
+        }
+    ]).then(answers => {
+        console.log(answers)
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
+        teamArray.push(intern);
+        createEmployee()
+    })
+}
