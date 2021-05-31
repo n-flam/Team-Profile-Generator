@@ -41,3 +41,27 @@ function createManager() {
         createEmployee()
     })
 }
+
+// adding staff member selection
+function createEmployee() {
+    inquirer.prompt([
+        {
+            type: 'list',
+            message: 'Who do you want to add to your team?',
+            name: 'employeeType',
+            choices: ['Add Engineer', 'Add Intern', 'Quit to result'],
+        },
+    ]).then((data) => {
+        // console.log(data);
+        switch (data.employeeType) {
+            case 'Add Engineer':
+                addEngineer();
+                break;
+            case 'Add Intern':
+                addIntern();
+                break;
+            default:
+                buildSouce(teamArray);
+        }
+    });
+}
