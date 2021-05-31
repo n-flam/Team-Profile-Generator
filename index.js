@@ -164,5 +164,31 @@ function buildEmployee(employee) {
     
         return source;
     }
+
+
+    function buildSouce(teamArray) {
+        let asd = "";
+        for (let index = 0; index < teamArray.length; index++) {
+            const employee = teamArray[index];
+            asd += buildEmployee(employee)
+        }
+        const sourcePath = path.join(
+            __dirname,
+            "src",
+            "html-templates",
+            "layout.html"
+        );
+    
+        let source = fs.readFileSync(sourcePath, "utf-8");
+    
+        const finalStr = htmlHelpers.injectCode(source, "{{ body }}", asd);
+        const finalPath = path.join(
+            __dirname,
+            "src",
+            "html-templates",
+            "final.html"
+        );
+        fs.writeFileSync(finalPath, finalStr);
+    }
     
     
