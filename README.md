@@ -58,9 +58,9 @@ THEN I exit the application, and the HTML is generated
 https://github.com/n-flam/Team-Profile-Generator
 
 # Google-Drive-Demo
-dont forget
+https://drive.google.com/file/d/1EJLnjtE9DH4xTYQrV66vN_tzPhg5CpZ5/view?usp=sharing
 
 
 # Mock-Up
-![Alt text](dont forget)
+![Alt text](https://github.com/n-flam/Team-Profile-Generator/blob/main/assets/mockup.png)
 
