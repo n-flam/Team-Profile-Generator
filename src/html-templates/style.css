@@ -21,20 +21,26 @@ body {
     font-size: 50px;
 }
 
+.card {
+    box-shadow: 5px 5px 10px grey;
+}
+
 
 .card-header {
     background-color: var(--primary);
     color: var(--secondary);
+    background-color: #2e427a;
 }
 
 .card-body {
     background-color: var(--secondary);
     color: var(--primary);
+    background-color: rgb(223, 223, 223);
 }
 
 .container {
     margin: 100px auto;
     justify-content: space-evenly;
     display: flex;
-    
+   
 }
