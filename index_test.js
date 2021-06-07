@@ -131,49 +131,35 @@ function buildEmployee(employee) {
     let source;
     if (employee instanceof Manager)  {
         source = `
-        <div class="col-4 mt-4">
-        <div class="card" style="width: 18rem">
-        <h5 class="card-header">${ employee.getName() }</h5>
+        <div class="card">
+        <div class="card-header">ID: ${ employee.getId() }</div>
         <div class="card-body">
-        <ul list-group list-group-flush>
-        <li class="list-group-item card-title">ID: ${ employee.getId() } </li>
-        <li class="list-group-item card-title">ID: ${ employee.getRole() } </li>
-        <li class="list-group-item card-title">ID: ${ employee.getOfficeNumber() } </li>
-        </ul>
+          <h5 class="card-title">Name: ${ employee.getName() }</h5>
+          <p class="card-text">Role: ${ employee.getRole() }</p>
+          <a href="#" class="btn btn-primary">Phone: ${ employee.getOfficeNumber() }</a>
         </div>
-      </div>
-        </div>
-        `;
+      </div>`;
     } else if (employee instanceof Engineer) {
         source = `
-        <div class="col-4 mt-4">
-        <div class="card" style="width: 18rem">
-        <h5 class="card-header">${ employee.getName() }</h5>
+        <div class="card">
+        <div class="card-header">ID: ${ employee.getId() }</div>
         <div class="card-body">
-        <ul list-group list-group-flush>
-        <li class="list-group-item card-title">ID: ${ employee.getId() } </li>
-        <li class="list-group-item card-title">ID: ${ employee.getRole() } </li>
-        <li class="list-group-item card-text">Github: <a href="#">${ employee.getGithub() }</a></li>
-        </ul>
+          <h5 class="card-title">Name: ${ employee.getName() }</h5>
+          <p class="card-text">Role: ${ employee.getRole() }</p>
+          <a href="#" class="btn btn-primary">Github: ${ employee.getGithub() }</a>
         </div>
-      </div>
-        </div>`;
+      </div>`
     
     } else if (employee instanceof Intern) {
-        source =
-        `
-        <div class="col-4 mt-4">
-        <div class="card" style="width: 18rem">
-        <h5 class="card-header">${ employee.getName() }</h5>
+        source =`
+        <div class="card">
+        <div class="card-header">ID: ${ employee.getId() }</div>
         <div class="card-body">
-        <ul list-group list-group-flush>
-        <li class="list-group-item card-title">ID: ${ employee.getId() } </li>
-        <li class="list-group-item card-title">ID: ${ employee.getRole() } </li>
-        <li class="list-group-item card-text">School: <a href="#">${ employee.getSchool() }</a></li>
-        </ul>
+          <h5 class="card-title">Name: ${ employee.getName() }</h5>
+          <p class="card-text">Role: ${ employee.getRole() }</p>
+          <a href="#" class="btn btn-primary">School: ${ employee.getSchool() }</a>
         </div>
-      </div>
-        </div>`
+      </div>`
     }
     
         return source;
